@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="{% static 'articles_app/style.css' %}">
+</head>
+<body>
+
+<h1>Articles</h1>
+
+<a href="?sort=date">Sort by date</a>
+<a href="?sort=comments">Sort by comments</a>
+
+<hr>
+
+{% for article in articles %}
+    <div>
+        <h2>
+            <a href="/articles/{{ article.id }}/">
+                {{ article.title }}
+            </a>
+        </h2>
+
+        <p>
+            Category: {{ article.category.name }}
+        </p>
+
+        <p>
+            Published: {{ article.published_at }}
+        </p>
+
+        <p>
+            Comments: {{ article.comments_count }}
+        </p>
+
+    
+    </div>
+{% endfor %}
+
+</body>
+</html>

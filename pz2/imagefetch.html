@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Зображення з JSON</h1>
+
+    <script>
+        fetch('image.json')
+            .then(response => response.json())
+            .then(data => {
+                img = document.createElement('img');
+                img.src = data.imageUrl;
+                img.width = 800;
+                document.body.appendChild(img);
+            })
+    </script>
+
+</body>
+</html>

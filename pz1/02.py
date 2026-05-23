@@ -1,9 +1,12 @@
-print("Програма для обчислення середнього значення трьох чисел.")
+print("Програма для обчислення середнього значення .")
 
-a = float(input("Введіть перше число а: "))
-b = float(input("Введіть друге число b: "))
-c = float(input("Введіть третє число c: "))
+count = int(input("Скільки чисел ви хочете ввести? "))
+sum = 0
 
-avg = (a + b + c) / 3
+for i in range(count):
+    current = float(input(f"Введіть число {i + 1}: "))
+    sum += current
+
+avg = sum / count
 
 print("Середнє значення:", avg)
